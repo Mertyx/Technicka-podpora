@@ -1,0 +1,1 @@
+# Technicka-podpora
