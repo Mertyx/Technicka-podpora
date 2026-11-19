@@ -11,7 +11,8 @@ def chat():
     student = data.get('student', '')
     email = data.get('email', '')
 
-    print(f"Příchozí dotaz od: {student}, email: {email}, zpráva: {message}")
+    # Přidáno flush=True pro okamžitý výpis do logů na Renderu
+    print(f"Příchozí dotaz od: {student}, email: {email}, zpráva: {message}", flush=True)
 
     msg_lower = message.lower()
     if 'platba' in msg_lower or 'faktura' in msg_lower:
