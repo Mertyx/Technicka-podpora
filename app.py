@@ -24,8 +24,9 @@ def chat():
             f"Dotaz zákazníka zní: {message}"
         )
 
+        # Použití rychlého modelu gemini-3.8-flash-lite
         response = client.models.generate_content(
-            model="gemini-3.8-flash",
+            model="gemini-3.8-flash-lite",
             contents=prompt,
         )
         
@@ -33,7 +34,7 @@ def chat():
 
     except Exception as e:
         print(f"Chyba při komunikaci s Gemini: {e}", flush=True)
-        reply_text = "Omlouváme se, AI asistent je momentálně nedostupný."
+        reply_text = "Omlouváme se, AI asistent je momentálně přetížený, zkuste to prosím za chvilku."
 
     return jsonify({'reply': reply_text})
 
